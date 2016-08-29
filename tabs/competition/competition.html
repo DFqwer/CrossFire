@@ -1,0 +1,18 @@
+<ion-view class="stable-bg" hide-nav-bar="true" >
+    <ion-content>
+        <!--　下拉刷新　-->
+        <ion-refresher pulling-text="向下拉刷新" on-refresh="refresh()"></ion-refresher>
+        <!--　列表　-->
+        <div class="list intelligence-list" show-delete="data.showDelete" show-reorder="data.showReorder">
+            <a ui-sref="tabs.intelligence_set.particulars">
+                <ion-item ng-repeat="product in products" class="item-remove-animate item-text-wrap item-thumbnail-left intelligence-item" >
+                    <img ng-src="{{product.imgSrc}}" />
+                    <h2>{{product.name}}</h2>
+                    <p>{{product.message}}</p>
+                </ion-item>
+            </a>
+            <!--　无线滚动　-->
+            <ion-infinite-scroll on-infinite="loadMore()" immediate-check="false"></ion-infinite-scroll>
+        </div>
+    </ion-content>
+</ion-view>
