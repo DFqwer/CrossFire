@@ -1,15 +1,12 @@
 <ion-view class="stable-bg" hide-nav-bar="true" >
     <ion-content style="top:48px;">
-        <!--　下拉刷新　-->
         <ion-refresher pulling-text="向下拉刷新" on-refresh="refresh()"></ion-refresher>
-        <!--　搜索栏　-->
         <div class="item-input-inset search" ui-sref="search" >
             <a class="button  button-light">
                 <i class="icon icon-royal ion-ios-search"></i>
                 <span>大家在搜:火线币</span>
             </a>
         </div>
-        <!--　轮播图　-->
         <ion-slide-box class="carouselImg" auto-play="true" slide-interval="2500" does-continue="true" on-slide-changed="slideChanged(index)" pager-click="pagerClick(index)" active-slide="data.page">
             <ion-slide><div ng-class="image"><img ng-src="images/CF_00.jpg" /></div></ion-slide>
             <ion-slide><div class="image"><img ng-src="images/CF_02.jpg" /></div></ion-slide>
@@ -17,7 +14,6 @@
             <ion-slide><div class="image"><img ng-src="images/CF_04.jpg" /></div></ion-slide>
             <ion-slide><div class="image"><img ng-src="images/CF_05.jpg" /></div></ion-slide>
         </ion-slide-box>
-        <!--　列表　-->
         <div class="list intelligence-list" show-delete="data.showDelete" show-reorder="data.showReorder">
             <a ui-sref="tabs.intelligence_set.particulars">
                 <ion-item ng-repeat="product in products" class="item-remove-animate item-text-wrap item-thumbnail-left intelligence-item" >
@@ -26,7 +22,6 @@
                     <p>{{product.message}}</p>
                 </ion-item>
             </a>
-            <!--　无线滚动　-->
             <ion-infinite-scroll on-infinite="loadMore()" immediate-check="false"></ion-infinite-scroll>
         </div>
     </ion-content>

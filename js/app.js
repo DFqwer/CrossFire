@@ -5,19 +5,15 @@ app.config(function ($stateProvider,$urlRouterProvider,$ionicConfigProvider){
     // 去掉后退按钮里面自带的文字
     $ionicConfigProvider.backButton.text("");
     $ionicConfigProvider.backButton.previousTitleText("");
-
     //android tabs在底部
     $ionicConfigProvider.platform.ios.tabs.style('standard');
     $ionicConfigProvider.platform.ios.tabs.position('bottom');
     $ionicConfigProvider.platform.android.tabs.style('standard');
     $ionicConfigProvider.platform.android.tabs.position('standard');
-
     $ionicConfigProvider.platform.ios.navBar.alignTitle('center');
     $ionicConfigProvider.platform.android.navBar.alignTitle('bottom');//默认为left
-
     $ionicConfigProvider.platform.ios.backButton.previousTitleText('').icon('ion-ios-arrow-thin-left');
     $ionicConfigProvider.platform.android.backButton.previousTitleText('').icon('ion-android-arrow-back');
-
     $ionicConfigProvider.platform.ios.views.transition('ios');
     $ionicConfigProvider.platform.android.views.transition('android');
 
@@ -74,7 +70,6 @@ app.config(function ($stateProvider,$urlRouterProvider,$ionicConfigProvider){
             templateUrl:"tabs/activity/activity.html"
         }}
     });
-
     // 社区 community
     $stateProvider.state("tabs.community",{
         url:"/community",
@@ -96,7 +91,6 @@ app.config(function ($stateProvider,$urlRouterProvider,$ionicConfigProvider){
             templateUrl:"tabs/role/role.html"
         }}
     });
-
     // 默认路由
     $urlRouterProvider.otherwise("/tabs/intelligence_set/intelligence");
 });
@@ -130,17 +124,13 @@ app.controller("myCtrl",function ($scope,$http){
     };
     // 无限滚动
     $scope.loadMore = function (){
-        // 向服务器端请求一页新的数据，追加到现有数据之后
         $http.get("json/data.json").success(function (data){
-            // 使用Array的原型方法push;等价于 $scope.products.push(data)
             Array.prototype.push.apply($scope.products,data);
         }).finally(function (){
-            // 通知框架，加载结束，停止显示图标
             $scope.$broadcast("scroll.infiniteScrollComplete");
         });
     };
 });
-
 //二级目录隐藏选项卡
 app.directive('hideTabs', function($rootScope) {
     return {
@@ -151,44 +141,9 @@ app.directive('hideTabs', function($rootScope) {
                     $rootScope.hideTabs = value;
                 });
             });
-
             scope.$on('$ionicView.beforeLeave', function() {
                 $rootScope.hideTabs = false;
             });
         }
     };
 });
-
-
-
-
-
-
-
-
-
-// 配置路由
-//app.config(function ($stateProvider,$urlRouterProvider){
-//    $stateProvider.state("activity",{
-//        url:"/activity",
-//        templateUrl:"views/activity/activity.html"
-//    });
-//    $stateProvider.state("competition",{
-//        url:"/competition",
-//        templateUrl:"views/competition/competition.html"
-//    });
-//    $stateProvider.state("counsel",{
-//        url:"/counsel",
-//        templateUrl:"views/counsel/counsel.html"
-//    });
-//    $stateProvider.state("picture",{
-//        url:"/picture",
-//        templateUrl:"views/picture/picture.html"
-//    });
-//    $stateProvider.state("video",{
-//        url:"/video",
-//        templateUrl:"views/video/video.html"
-//    });
-//    // 默认路由
-//    $urlRouterProvider.otherwise("/activity");
-//});

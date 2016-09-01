@@ -3,77 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>CrossFire</title>
+    <title>掌上CrossFire</title>
     <link href="lib/ionic/css/ionic.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="lib/ionic/js/ionic.bundle.min.js"></script>
     <script src="js/app.js"></script>
 </head>
 <body ng-app="myApp" ng-controller="myCtrl">
-<!--<ion-side-menu>-->
-    <!--&lt;!&ndash;　导航栏　&ndash;&gt;-->
-    <!--<ion-nav-bar class="bar-dark">-->
-        <!--<ion-nav-back-button class="button-clear">-->
-            <!--<i class="icon ion-chevron-left "></i>-->
-        <!--</ion-nav-back-button>-->
-    <!--</ion-nav-bar>-->
-    <!--&lt;!&ndash;　视图导航　&ndash;&gt;-->
-    <!--<ion-nav-view></ion-nav-view>-->
-<!--</ion-side-menu>-->
-<ion-side-menus>
-    <!--　主内容区域　-->
-    <ion-side-menu-content>
-        <!--　导航栏　-->
-        <!--<ion-nav-bar class="bar-dark">-->
-            <!--<ion-nav-back-button class="button-clear">-->
-                <!--<i class="icon ion-chevron-left"></i>-->
-            <!--</ion-nav-back-button>-->
-        <!--</ion-nav-bar>-->
-        <!--　视图导航　-->
-        <ion-nav-view></ion-nav-view>
-    </ion-side-menu-content>
-
-    <!--　侧边栏区域  left　-->
-    <ion-side-menu side="left">
-        <!--　内容区　-->
-        <ion-content class="dark-bg">
-            <div class="menu-head-portrait">
-                <img src="images/head_portrait.jpg"/>
-                <span class="nickname">昵称</span>
-                <i class="icon ion-male"></i>
-                <div class="experience"><input type="button" class="sign" value="签到" /></div>
-            </div>
-            <div class="list menu-li">
-                <a class="item item-icon-left item-icon-right dark-bg" ui-sref="#" menu-close>
-                    <i class="icon ion-arrow-graph-up-right"></i>积分中心<i class="icon ion-chevron-right gray"></i>
-                </a>
-                <a class="item item-icon-left item-icon-right dark-bg" ui-sref="#" menu-close>
-                    <i class="icon ion-android-star-outline"></i>我的收藏<i class="icon ion-chevron-right gray"></i>
-                </a>
-                <a class="item item-icon-left item-icon-right dark-bg" ui-sref="#" menu-close>
-                    <i class="icon ion-archive"></i>我的下载<i class="icon ion-chevron-right gray"></i>
-                </a>
-                <a class="item item-icon-left item-icon-right dark-bg" ui-sref="#" menu-close>
-                    <i class="icon ion-android-chat"></i>评论通知<i class="icon ion-chevron-right gray"></i>
-                </a>
-                <a class="item item-icon-left item-icon-right dark-bg" ui-sref="#" menu-close>
-                    <i class="icon ion-ios-eye"></i>访客记录<i class="icon ion-chevron-right gray"></i>
-                </a>
-                <a class="item item-icon-left item-icon-right dark-bg" ui-sref="#" menu-close>
-                    <i class="icon ion-android-checkbox-outline"></i>我的任务<i class="icon ion-chevron-right gray"></i>
-                </a>
-            </div>
-        </ion-content>
-        <ion-footer-bar class="footer dark-bg">
-                <a ui-sref="#" menu-close>
-                    <i class="icon ion-gear-b"></i>设置
-                </a>
-                <a ui-sref="#" menu-close>
-                    <i class="icon ion-android-expand"></i>扫一扫
-                </a>
-        </ion-footer-bar>
-    </ion-side-menu>
-</ion-side-menus>
-
+    <ion-side-menus>
+        <!--　主内容区域　-->
+        <ion-side-menu-content>
+            <ion-nav-view></ion-nav-view>
+        </ion-side-menu-content>
+        <!--　侧边栏区域  left　-->
+        <ion-side-menu side="left">
+            <ion-content class="dark-bg">
+                <div class="menu-head-portrait">
+                    <img src="images/head_portrait.jpg"/>
+                    <span class="nickname">昵称</span>
+                    <i class="icon ion-male"></i>
+                    <div class="experience"><input type="button" class="sign" value="签到" /></div>
+                </div>
+                <div class="list menu-li">
+                    <a class="item item-icon-left item-icon-right dark-bg" ui-sref="#" menu-close>
+                        <i class="icon ion-arrow-graph-up-right"></i>积分中心<i class="icon ion-chevron-right gray"></i>
+                    </a>
+                    <a class="item item-icon-left item-icon-right dark-bg" ui-sref="#" menu-close>
+                        <i class="icon ion-android-star-outline"></i>我的收藏<i class="icon ion-chevron-right gray"></i>
+                    </a>
+                    <a class="item item-icon-left item-icon-right dark-bg" ui-sref="#" menu-close>
+                        <i class="icon ion-archive"></i>我的下载<i class="icon ion-chevron-right gray"></i>
+                    </a>
+                    <a class="item item-icon-left item-icon-right dark-bg" ui-sref="#" menu-close>
+                        <i class="icon ion-android-chat"></i>评论通知<i class="icon ion-chevron-right gray"></i>
+                    </a>
+                    <a class="item item-icon-left item-icon-right dark-bg" ui-sref="#" menu-close>
+                        <i class="icon ion-ios-eye"></i>访客记录<i class="icon ion-chevron-right gray"></i>
+                    </a>
+                    <a class="item item-icon-left item-icon-right dark-bg" ui-sref="#" menu-close>
+                        <i class="icon ion-android-checkbox-outline"></i>我的任务<i class="icon ion-chevron-right gray"></i>
+                    </a>
+                </div>
+            </ion-content>
+            <ion-footer-bar class="footer dark-bg">
+                    <a ui-sref="#" menu-close>
+                        <i class="icon ion-gear-b"></i>设置
+                    </a>
+                    <a ui-sref="#" menu-close>
+                        <i class="icon ion-android-expand"></i>扫一扫
+                    </a>
+            </ion-footer-bar>
+        </ion-side-menu>
+    </ion-side-menus>
 </body>
 </html>
